@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oneday.mapper.DiaryMapper">
+	<select id="selDiary" parameterType="searchItems"
+		resultType="Diary">
+		select * from diary
+		<where>
+			<if test="phone!=null and phone!=''">
+				and phone = #{phone}
+			</if>
+			<if test="weather!=null and weather!=''">
+				and weather = #{weather}
+			</if>
+			<if test="mood!=null and mood!=''">
+				and mood = #{mood}
+			</if>
+			<if test="event!=null and event!=''">
+				and event = #{event}
+			</if>
+			<if test="draft!=null">
+				and draft = #{draft}
+			</if>
+			<if test="title!=null and title!=''">
+				<bind name="title" value="'%'+title+'%'" />
+				and title like #{title}
+			</if>
+		</where>
+	</select>
+	<update id="updDiary" parameterType="diary">
+		update diary
+		<set>
+			phone = #{phone},
+			<if test="title!=null and title!=''">
+				title=#{title},
+			</if>
+			<if test="date!=null and date!=''">
+				date=#{date},
+			</if>
+			<if test="weather!=null and weather!=''">
+				weather = #{weather},
+			</if>
+			<if test="mood!=null and mood!=''">
+				mood = #{mood},
+			</if>
+			<if test="event!=null and event!=''">
+				event = #{event},
+			</if>
+			<if test="picture!=null and picture!=''">
+				picture=#{picture},
+			</if>
+			<if test="content!=null and content!=''">
+				content=#{content},
+			</if>
+			<if test="draft!=null">
+				draft = #{draft},
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+</mapper>
