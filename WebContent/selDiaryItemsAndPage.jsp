@@ -12,13 +12,13 @@
 		$("#select").click(function() {
 			var page = {
 				"searchItems" : {
-					"title" : '',
+					"title" : '的',
 					"phone" : 13225942005
 				},
 				"page" : {
 					"pageNo" : 1,
 					"pageSize" : 4,
-					"desc" : true,
+					"desc" : false,
 				}
 
 			}

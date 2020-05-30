@@ -79,7 +79,7 @@
 				and draft = #{searchItems.draft}
 			</if>
 			<if test="searchItems.title!=null and searchItems.title!=''">
-				<bind name="searchItems.title" value="'%'+title+'%'" />
+				<bind name="searchItems.title" value="'%'+searchItems.title+'%'" />
 				and title like #{searchItems.title}
 			</if>
 		</where>
