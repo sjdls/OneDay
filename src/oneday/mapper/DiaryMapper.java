@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import oneday.pojo.Diary;
+import oneday.pojo.Page;
 import oneday.pojo.SearchItems;
 import oneday.pojo.User;
 
@@ -39,4 +40,10 @@ public interface DiaryMapper {
 	int delDiary(int id);
 	
 	List<Diary> selDiary(SearchItems searchItems);
+	
+	@Select("select * from diary where phone=#{phone} && draft = false order by date desc,id limit #{pageNo},#{pageSize}")
+	List<Diary> selDiaryByPageDesc(Page page);
+	
+	@Select("select * from diary where phone=#{phone} && draft = false order by date asc,id limit #{pageNo},#{pageSize}")
+	List<Diary> selDiaryByPageAsc(Page page);
 }

@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import oneday.pojo.Diary;
+import oneday.pojo.Page;
 import oneday.pojo.Pet;
 import oneday.pojo.SearchItems;
 import oneday.pojo.Setting;
@@ -293,5 +294,11 @@ public class DiaryController {
 			}
 		}
 		return result;
+	}
+	
+	@RequestMapping(value = "diary/diaryByPage")
+	@ResponseBody
+	public List<Diary> getDiaryByPage(@RequestBody Page page){
+		return onedayServiceImpl.getDiaryByPage(page);
 	}
 }

@@ -12,6 +12,7 @@ import oneday.mapper.DiaryMapper;
 import oneday.mapper.PetMapper;
 import oneday.mapper.UserMapper;
 import oneday.pojo.Diary;
+import oneday.pojo.Page;
 import oneday.pojo.Pet;
 import oneday.pojo.SearchItems;
 import oneday.pojo.Setting;
@@ -237,6 +238,16 @@ public class OnedayServiceImpl implements OnedayService {
 			result=true;
 		}
 		return result;
+	}
+
+	@Override
+	public List<Diary> getDiaryByPage(Page page) {
+		// TODO Auto-generated method stub
+		if(page.getDesc()) {
+			return diaryMapper.selDiaryByPageDesc(page);
+		}else {
+			return diaryMapper.selDiaryByPageAsc(page);
+		}
 	}
 
 }

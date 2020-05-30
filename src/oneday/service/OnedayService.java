@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.List;
 
 import oneday.pojo.Diary;
+import oneday.pojo.Page;
 import oneday.pojo.Pet;
 import oneday.pojo.SearchItems;
 import oneday.pojo.Setting;
@@ -30,4 +31,6 @@ public interface OnedayService {
 	boolean delDiary(int id);
 	List<Diary> selDiaryByItems(SearchItems searchItems);
 	boolean updSetting(Setting setting);
+	
+	List<Diary> getDiaryByPage(Page page);
 }
