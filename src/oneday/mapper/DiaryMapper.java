@@ -41,9 +41,9 @@ public interface DiaryMapper {
 	
 	List<Diary> selDiary(SearchItems searchItems);
 	
-	@Select("select * from diary where phone=#{phone} && draft = false order by date desc,id limit #{pageNo},#{pageSize}")
+	@Select("select * from diary where phone=#{phone} && draft = false order by date desc,id desc limit #{pageNo},#{pageSize}")
 	List<Diary> selDiaryByPageDesc(Page page);
 	
-	@Select("select * from diary where phone=#{phone} && draft = false order by date asc,id limit #{pageNo},#{pageSize}")
+	@Select("select * from diary where phone=#{phone} && draft = false order by date asc,id asc limit #{pageNo},#{pageSize}")
 	List<Diary> selDiaryByPageAsc(Page page);
 }

@@ -35,7 +35,7 @@ public class OnedayServiceImpl implements OnedayService {
 		user.setPhone(phone);
 		user.setPassword(password);
 		System.out.println(user);
-		User resultUser=userMapper.selByUser(user);
+		User resultUser = userMapper.selByUser(user);
 		System.out.println(resultUser);
 		return resultUser;
 	}
@@ -45,14 +45,13 @@ public class OnedayServiceImpl implements OnedayService {
 		// TODO Auto-generated method stub
 		return userMapper.selByPhoneSetting(phone);
 	}
-	
 
 	@Override
 	public Pet getPet(Long phone) {
 		// TODO Auto-generated method stub
 		return petMapper.selByPhonePet(phone);
 	}
-	
+
 	@Override
 	public List<Diary> getDiaryByDate(Date date, Long phone) {
 		// TODO Auto-generated method stub
@@ -73,11 +72,11 @@ public class OnedayServiceImpl implements OnedayService {
 	@Override
 	public boolean updPetName(String petName, Long phone) {
 		// TODO Auto-generated method stub
-		Integer tem=petMapper.updPetName(petName, phone);
-		boolean result=false;
+		Integer tem = petMapper.updPetName(petName, phone);
+		boolean result = false;
 		System.out.println(tem);
-		if(tem!=0) {
-			result=true;
+		if (tem != 0) {
+			result = true;
 		}
 		return result;
 	}
@@ -85,11 +84,11 @@ public class OnedayServiceImpl implements OnedayService {
 	@Override
 	public boolean updPetWeight(int weight, Long phone) {
 		// TODO Auto-generated method stub
-		Integer tem=petMapper.updPetWeight(weight, phone);
-		boolean result=false;
+		Integer tem = petMapper.updPetWeight(weight, phone);
+		boolean result = false;
 		System.out.println(tem);
-		if(tem!=0) {
-			result=true;
+		if (tem != 0) {
+			result = true;
 		}
 		return result;
 	}
@@ -97,11 +96,11 @@ public class OnedayServiceImpl implements OnedayService {
 	@Override
 	public boolean updPetIntimacy(int intimacy, Long phone) {
 		// TODO Auto-generated method stub
-		Integer tem=petMapper.updPetIntimacy(intimacy, phone);
-		boolean result=false;
+		Integer tem = petMapper.updPetIntimacy(intimacy, phone);
+		boolean result = false;
 		System.out.println(tem);
-		if(tem!=0) {
-			result=true;
+		if (tem != 0) {
+			result = true;
 		}
 		return result;
 	}
@@ -109,11 +108,11 @@ public class OnedayServiceImpl implements OnedayService {
 	@Override
 	public boolean updProfilePhoto(String photo, Long phone) {
 		// TODO Auto-generated method stub
-		Integer tem=userMapper.updProfilePhoto(photo, phone);
-		boolean result=false;
+		Integer tem = userMapper.updProfilePhoto(photo, phone);
+		boolean result = false;
 		System.out.println(tem);
-		if(tem!=0) {
-			result=true;
+		if (tem != 0) {
+			result = true;
 		}
 		return result;
 	}
@@ -121,11 +120,11 @@ public class OnedayServiceImpl implements OnedayService {
 	@Override
 	public boolean updPassword(String password, Long phone) {
 		// TODO Auto-generated method stub
-		Integer tem=userMapper.updPassword(password, phone);
-		boolean result=false;
+		Integer tem = userMapper.updPassword(password, phone);
+		boolean result = false;
 		System.out.println(tem);
-		if(tem!=0) {
-			result=true;
+		if (tem != 0) {
+			result = true;
 		}
 		return result;
 	}
@@ -133,35 +132,35 @@ public class OnedayServiceImpl implements OnedayService {
 	@Override
 	public boolean updUsername(String username, Long phone) {
 		// TODO Auto-generated method stub
-		Integer tem=userMapper.updUsername(username, phone);
-		boolean result=false;
-		System.out.println(tem); 
-		if(tem!=0) {
-			result=true;
+		Integer tem = userMapper.updUsername(username, phone);
+		boolean result = false;
+		System.out.println(tem);
+		if (tem != 0) {
+			result = true;
 		}
 		return result;
 	}
-	
+
 	@Override
 	public boolean updEmail(String email, Long phone) {
 		// TODO Auto-generated method stub
-		Integer tem=userMapper.updEmail(email, phone);
-		boolean result=false;
-		System.out.println(tem); 
-		if(tem!=0) {
-			result=true;
+		Integer tem = userMapper.updEmail(email, phone);
+		boolean result = false;
+		System.out.println(tem);
+		if (tem != 0) {
+			result = true;
 		}
 		return result;
 	}
 
 	@Override
 	public boolean updDiary(Diary diary) {
-		// TODO Auto-generated method stub		
+		// TODO Auto-generated method stub
 		System.out.println("begin-update");
-		Integer tem=diaryMapper.updDiary(diary);
-		boolean result=false;
-		if(tem!=0) {
-			result=true;
+		Integer tem = diaryMapper.updDiary(diary);
+		boolean result = false;
+		if (tem != 0) {
+			result = true;
 		}
 		System.out.println("over-update");
 		return result;
@@ -169,11 +168,11 @@ public class OnedayServiceImpl implements OnedayService {
 
 	@Override
 	public boolean insUser(User user) {
-		// TODO Auto-generated method stub		
-		Integer tem=userMapper.insUser(user);
-		boolean result=false;
-		if(tem!=0) {
-			result=true;
+		// TODO Auto-generated method stub
+		Integer tem = userMapper.insUser(user);
+		boolean result = false;
+		if (tem != 0) {
+			result = true;
 		}
 		return result;
 	}
@@ -181,10 +180,10 @@ public class OnedayServiceImpl implements OnedayService {
 	@Override
 	public boolean insSetting(Setting setting) {
 		// TODO Auto-generated method stub
-		Integer tem=userMapper.insSetting(setting);
-		boolean result=false;
-		if(tem!=0) {
-			result=true;
+		Integer tem = userMapper.insSetting(setting);
+		boolean result = false;
+		if (tem != 0) {
+			result = true;
 		}
 		return result;
 	}
@@ -192,10 +191,10 @@ public class OnedayServiceImpl implements OnedayService {
 	@Override
 	public boolean insPet(Pet pet) {
 		// TODO Auto-generated method stub
-		Integer tem=petMapper.insPet(pet);
-		boolean result=false;
-		if(tem!=0) {
-			result=true;
+		Integer tem = petMapper.insPet(pet);
+		boolean result = false;
+		if (tem != 0) {
+			result = true;
 		}
 		return result;
 	}
@@ -203,10 +202,10 @@ public class OnedayServiceImpl implements OnedayService {
 	@Override
 	public boolean insDiary(Diary diary) {
 		// TODO Auto-generated method stub
-		Integer tem=diaryMapper.insDiary(diary);
-		boolean result=false;
-		if(tem!=0) {
-			result=true;
+		Integer tem = diaryMapper.insDiary(diary);
+		boolean result = false;
+		if (tem != 0) {
+			result = true;
 		}
 		return result;
 	}
@@ -214,10 +213,10 @@ public class OnedayServiceImpl implements OnedayService {
 	@Override
 	public boolean delDiary(int id) {
 		// TODO Auto-generated method stub
-		Integer tem=diaryMapper.delDiary(id);
-		boolean result=false;
-		if(tem!=0) {
-			result=true;
+		Integer tem = diaryMapper.delDiary(id);
+		boolean result = false;
+		if (tem != 0) {
+			result = true;
 		}
 		return result;
 	}
@@ -231,11 +230,11 @@ public class OnedayServiceImpl implements OnedayService {
 	@Override
 	public boolean updSetting(Setting setting) {
 		// TODO Auto-generated method stub
-		Integer tem=userMapper.updSetting(setting);
+		Integer tem = userMapper.updSetting(setting);
 		System.out.println(tem);
-		boolean result=false;
-		if(tem!=0) {
-			result=true;
+		boolean result = false;
+		if (tem != 0) {
+			result = true;
 		}
 		return result;
 	}
@@ -243,9 +242,12 @@ public class OnedayServiceImpl implements OnedayService {
 	@Override
 	public List<Diary> getDiaryByPage(Page page) {
 		// TODO Auto-generated method stub
-		if(page.getDesc()) {
+		int pageNo = page.getPageNo() - 1;
+		int pageSize = page.getPageSize();
+		page.setPageNo(pageNo * pageSize);
+		if (page.getDesc()) {
 			return diaryMapper.selDiaryByPageDesc(page);
-		}else {
+		} else {
 			return diaryMapper.selDiaryByPageAsc(page);
 		}
 	}
