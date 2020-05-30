@@ -11,13 +11,20 @@
 	$(function() {
 		$("#select").click(function() {
 			var page = {
-				"title" : '',
-				"phone" : 13225942005,
-				"draft" : false
+				"searchItems" : {
+					"title" : '',
+					"phone" : 13225942005
+				},
+				"page" : {
+					"pageNo" : 1,
+					"pageSize" : 4,
+					"desc" : true,
+				}
+
 			}
 			alert($("#user_id").val());
 			$.ajax({
-				url : "diary/diaryByItems",
+				url : "diary/diaryByItemsAndPage",
 				//url : "users",
 				type : "post",
 				data : JSON.stringify(page),

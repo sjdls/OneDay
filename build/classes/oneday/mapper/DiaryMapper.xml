@@ -59,4 +59,33 @@
 		</set>
 		where id = #{id}
 	</update>
+
+	<select id="selDIaryByItemsAndPage" resultType="Diary">
+		select * from diary
+		<where>
+			<if test="searchItems.phone!=null and searchItems.phone!=''">
+				and phone = #{searchItems.phone}
+			</if>
+			<if test="searchItems.weather!=null and searchItems.weather!=''">
+				and weather = #{searchItems.weather}
+			</if>
+			<if test="searchItems.mood!=null and searchItems.mood!=''">
+				and mood = #{searchItems.mood}
+			</if>
+			<if test="searchItems.event!=null and searchItems.event!=''">
+				and event = #{searchItems.event}
+			</if>
+			<if test="searchItems.draft != null">
+				and draft = #{searchItems.draft}
+			</if>
+			<if test="searchItems.title!=null and searchItems.title!=''">
+				<bind name="searchItems.title" value="'%'+title+'%'" />
+				and title like #{searchItems.title}
+			</if>
+		</where>
+		order by
+		<if test="page.desc">date desc,id desc</if>
+		<if test="!page.desc">date asc,id asc</if>
+		limit #{page.pageNo},#{page.pageSize}
+	</select>
 </mapper>

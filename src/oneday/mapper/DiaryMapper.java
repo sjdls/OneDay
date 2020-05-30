@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -46,4 +47,6 @@ public interface DiaryMapper {
 	
 	@Select("select * from diary where phone=#{phone} && draft = false order by date asc,id asc limit #{pageNo},#{pageSize}")
 	List<Diary> selDiaryByPageAsc(Page page);
+	
+	List<Diary> selDIaryByItemsAndPage(@Param("searchItems")SearchItems searchItems,@Param("page")Page page);
 }

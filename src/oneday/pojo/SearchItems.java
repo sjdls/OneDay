@@ -8,7 +8,7 @@ public class SearchItems {
 	private Boolean draft;
 	private Long phone;
 
-	public Boolean isDraft() {
+	public Boolean getDraft() {
 		return draft;
 	}
 

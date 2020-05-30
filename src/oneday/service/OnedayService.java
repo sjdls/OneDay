@@ -5,6 +5,7 @@ import java.util.List;
 
 import oneday.pojo.Diary;
 import oneday.pojo.Page;
+import oneday.pojo.PageAndItems;
 import oneday.pojo.Pet;
 import oneday.pojo.SearchItems;
 import oneday.pojo.Setting;
@@ -33,4 +34,5 @@ public interface OnedayService {
 	boolean updSetting(Setting setting);
 	
 	List<Diary> getDiaryByPage(Page page);
+	List<Diary> getDiaryByItemsAndPage(PageAndItems pageAndItems);
 }
