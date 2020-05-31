@@ -86,6 +86,6 @@
 		order by
 		<if test="page.desc">date desc,id desc</if>
 		<if test="!page.desc">date asc,id asc</if>
-		limit #{page.pageNo},#{page.pageSize}
+		<if test="page.pageNo > -1">limit #{page.pageNo},#{page.pageSize}</if>
 	</select>
 </mapper>
