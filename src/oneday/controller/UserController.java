@@ -118,7 +118,7 @@ public class UserController {
 			result = onedayServiceImpl.insSetting(setting);
 			Pet pet = new Pet();
 			pet.setPhone(user.getPhone());
-			pet.setPetname("小白");
+			pet.setPetname(user.getPhone()+"的宠物");
 			java.sql.Date currentDate = new java.sql.Date(System.currentTimeMillis());
 			System.out.println(currentDate);
 			pet.setBirthday(currentDate);

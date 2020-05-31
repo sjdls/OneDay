@@ -35,4 +35,5 @@ public interface OnedayService {
 	
 	List<Diary> getDiaryByPage(Page page);
 	List<Diary> getDiaryByItemsAndPage(PageAndItems pageAndItems);
+	boolean updPetColor(String color,Long phone);
 }

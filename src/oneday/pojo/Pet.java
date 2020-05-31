@@ -9,6 +9,7 @@ public class Pet {
 	private Date birthday;
 	private int weight;
 	private int intimacy;
+	private String color;
 
 	public int getId() {
 		return id;
@@ -62,6 +63,14 @@ public class Pet {
 	public String toString() {
 		return "Pet [id=" + id + ", phone=" + phone + ", petname=" + petname + ", birthday=" + birthday + ", weight="
 				+ weight + ", intimacy=" + intimacy + "]";
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
 	}
 
 }

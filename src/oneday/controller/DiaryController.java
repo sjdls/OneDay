@@ -308,4 +308,13 @@ public class DiaryController {
 	public List<Diary> getDiariesByItemsAndPage(@RequestBody PageAndItems pageAndItems) {
 		return onedayServiceImpl.getDiaryByItemsAndPage(pageAndItems);
 	}
+	
+	@RequestMapping(value = "diary/diaryLastet")
+	@ResponseBody
+	public Date getDiaryLatest(@RequestBody Page page) {
+		page.setPageNo(1);
+		page.setPageSize(1);
+		page.setDesc(true);
+		return onedayServiceImpl.getDiaryByPage(page).get(0).getDate();
+	}
 }

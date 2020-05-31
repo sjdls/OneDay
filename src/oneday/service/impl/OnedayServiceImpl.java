@@ -265,4 +265,16 @@ public class OnedayServiceImpl implements OnedayService {
 		return diaryMapper.selDIaryByItemsAndPage(searchItems, page);
 	}
 
+	@Override
+	public boolean updPetColor(String color, Long phone) {
+		// TODO Auto-generated method stub
+		Integer tem = petMapper.updPetColor(color, phone);
+		boolean result = false;
+		System.out.println(tem);
+		if (tem != 0) {
+			result = true;
+		}
+		return result;
+	}
+
 }

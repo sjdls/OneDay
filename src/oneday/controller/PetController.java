@@ -43,4 +43,10 @@ public class PetController {
 	public boolean setPetIntimacy(@RequestBody Pet pet,HttpSession session) {
 		return onedayServiceImpl.updPetIntimacy(pet.getIntimacy(), pet.getPhone());
 	}
+	
+	@RequestMapping(value = "pet/petColor")
+	@ResponseBody
+	public boolean Color(@RequestBody Pet pet,HttpSession session) {
+		return onedayServiceImpl.updPetColor(pet.getColor(), pet.getPhone());
+	}
 }
