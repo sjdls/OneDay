@@ -16,11 +16,8 @@
 					"phone" : 13225942005
 				},
 				"page" : {
-					"pageNo" : 1,
-					"pageSize" : 4,
 					"desc" : false,
 				}
-
 			}
 			alert($("#user_id").val());
 			$.ajax({

@@ -119,6 +119,7 @@ public class UserController {
 			Pet pet = new Pet();
 			pet.setPhone(user.getPhone());
 			pet.setPetname(user.getPhone()+"的宠物");
+			pet.setColor("orange");
 			java.sql.Date currentDate = new java.sql.Date(System.currentTimeMillis());
 			System.out.println(currentDate);
 			pet.setBirthday(currentDate);

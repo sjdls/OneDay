@@ -260,8 +260,11 @@ public class OnedayServiceImpl implements OnedayService {
 		Page page = pageAndItems.getPage();
 		int pageNo = page.getPageNo() - 1;
 		int pageSize = page.getPageSize();
-		//System.out.println(pageNo);
+		if(pageSize==0) {
+			pageSize=1;
+		}
 		page.setPageNo(pageNo * pageSize);
+		System.out.println(page.getPageNo());
 		return diaryMapper.selDIaryByItemsAndPage(searchItems, page);
 	}
 

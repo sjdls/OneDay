@@ -11,7 +11,7 @@
 	$(function() {
 		$("#select").click(function() {
 			var page = {
-				"phone" : 13225942923,
+				"phone" : 13235942923,
 				"password" : '123456789',
 				"email" : '123@qq.com',
 			}

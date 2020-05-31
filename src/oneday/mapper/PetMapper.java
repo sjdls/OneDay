@@ -22,6 +22,6 @@ public interface PetMapper {
 	@Update("update pet set color=#{0} where phone=#{1}")
 	int updPetColor(String color,Long phone);
 
-	@Insert("insert into pet values(default,#{phone},#{petname},#{birthday},#{weight},#{intimacy})")
+	@Insert("insert into pet values(default,#{phone},#{petname},#{birthday},#{weight},#{intimacy},#{color})")
 	int insPet(Pet pet);
 }
