@@ -36,8 +36,10 @@ import oneday.service.OnedayService;
 public class DiaryController {
 	@Resource
 	private OnedayService onedayServiceImpl;
+	//实际地址
 	@Value("${ducument.base}")
 	private String ducumentBase;
+	//映射的服务器地址
 	@Value("${mapping.path}")
 	private String mappingPath;
 
